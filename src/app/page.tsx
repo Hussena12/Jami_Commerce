@@ -1,8 +1,15 @@
+import Link from "next/link";
+
 export const metadata = {
   title: "Jami Commerce",
   icon: "/jami_logo",
 };
 
 export default function Home() {
-  return <div className="font-extrabold text-4xl">we are heavy</div>;
+  return (
+    <div className="font-extrabold text-4xl">
+      <Link href="/account">account</Link>
+      we are heavy
+    </div>
+  );
 }
