@@ -1,3 +1,5 @@
+import { MobileNavbar } from "@/components/layout/MobileNavbar";
+import { UserMobileNavbar } from "@/components/layout/UserMobileNavbar";
 import Link from "next/link";
 
 export const metadata = {
@@ -8,8 +10,9 @@ export const metadata = {
 export default function Home() {
   return (
     <div className="font-extrabold text-4xl">
-      <Link href="/account">account</Link>
       we are heavy
+      <MobileNavbar />
+      <UserMobileNavbar />
     </div>
   );
 }
