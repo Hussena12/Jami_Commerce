@@ -2,7 +2,37 @@
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
+/* globals.css or your CSS file */
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
+@keyframes slideUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+}
+
+/* Apply animations with state management */
+.dropdown-content[data-state="open"] {
+  animation: slideDown 0.3s ease-out forwards;
+}
+
+.dropdown-content[data-state="closed"] {
+  animation: slideUp 0.3s ease-out forwards;
+}
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

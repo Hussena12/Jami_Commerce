@@ -6,7 +6,9 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
+  DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
+import Link from "next/link";
 
 export function MobileNavbar() {
   const { theme, setTheme } = useTheme();
@@ -35,15 +37,20 @@ export function MobileNavbar() {
             <Menu className="h-5 w-5" />
           </DropdownMenuTrigger>
 
-          <DropdownMenuContent>
-            {" "}
-            <DropdownMenuItem asChild>
-              <a href="/about">About Us</a>
-            </DropdownMenuItem>
-            <DropdownMenuItem asChild>
-              <a href="/contact">Contact Us</a>
-            </DropdownMenuItem>
+          <DropdownMenuContent
+            className="mt-[1rem] w-screen rounded-none  dropdown-content"
+            side="bottom"
+          >
+            <DropdownMenuItem className="py-3 text-xl">
+              <Link href="/about">About Us</Link>
+            </DropdownMenuItem>{" "}
+            <DropdownMenuSeparator />
+            <DropdownMenuItem className="py-3 text-xl">
+              <Link href="/contact">Contact Us</Link>
+            </DropdownMenuItem>{" "}
+            <DropdownMenuSeparator />
             <DropdownMenuItem
+              className="py-3 text-xl"
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             >
               Toggle Theme
